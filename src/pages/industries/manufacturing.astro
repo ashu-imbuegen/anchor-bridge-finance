@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Education', href: '/industries/education' },
+  { label: 'Startups', href: '/industries/startups' },
+  { label: 'Financial Services', href: '/industries/financial-services' },
+  { label: 'Consumer', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Manufacturing Industry | Anchor Bridge Finance">
+  <IndustryPage
+    title="Manufacturing"
+    description="Comprehensive financial services for manufacturers, from cost accounting to customs compliance, helping you optimize operations and maximize profitability."
+    subIndustries={[
+      { title: 'Food & Beverage', desc: 'Financial management, excise tax compliance, and inventory accounting for F&B manufacturers.' },
+      { title: 'Automotive', desc: 'Cost accounting, customs duty planning, and financial reporting for automotive manufacturers and suppliers.' },
+      { title: 'Electronics', desc: 'Revenue recognition, warranty accounting, and tax planning for electronics manufacturers.' },
+      { title: 'Textiles & Apparel', desc: 'Inventory management, export compliance, and financial reporting for textile and apparel companies.' },
+      { title: 'Machinery & Equipment', desc: 'Fixed asset management, depreciation accounting, and capital expenditure advisory for machinery manufacturers.' },
+      { title: 'Chemicals', desc: 'Regulatory compliance, environmental accounting, and tax advisory for chemical manufacturers.' },
+    ]}
+    services={[
+      'Cost Accounting & Analysis',
+      'Inventory Valuation & Management',
+      'Customs & Excise Tax Compliance',
+      'Fixed Asset Management',
+      'ICV Certification',
+      'VAT Compliance for Manufacturing',
+      'Financial Reporting (IFRS)',
+      'Supply Chain Financial Advisory',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

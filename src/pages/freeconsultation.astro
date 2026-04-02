@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Free Consultation | Anchor Bridge Finance">
+  <!-- Hero -->
+  <section class="bg-primary py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-3">No Obligation</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Free Consultation</h1>
+      <p class="text-gray-300 text-lg max-w-3xl leading-relaxed">
+        Get expert financial advice at no cost. Book a free consultation with our team and discover how we can help your business grow.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits + Form -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Benefits -->
+        <div>
+          <h2 class="text-3xl font-bold text-primary mb-6">What You'll Get</h2>
+          <div class="space-y-6">
+            {[
+              { title: 'Expert Assessment', desc: 'A thorough review of your current financial setup and identification of areas for improvement.' },
+              { title: 'Tailored Recommendations', desc: 'Personalized advice based on your business type, industry, and specific challenges.' },
+              { title: 'Cost Estimation', desc: 'Transparent pricing for the services you need, with no hidden costs or surprises.' },
+              { title: 'Action Plan', desc: 'A clear roadmap of next steps to optimize your financial operations and compliance.' },
+            ].map((item) => (
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-primary mb-1">{item.title}</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-10 bg-accent rounded-xl p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 class="font-semibold text-primary">30-Minute Session</h3>
+            </div>
+            <p class="text-gray-500 text-sm">Our free consultation is a focused 30-minute session where we understand your needs and provide initial guidance. No strings attached.</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div>
+          <div class="bg-gray-50 rounded-2xl p-8 md:p-10">
+            <h3 class="text-2xl font-bold text-primary mb-6">Book Your Free Session</h3>
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                  <input type="text" placeholder="John" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                  <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <input type="tel" placeholder="+XX XXX XXX XXXX" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                <input type="text" placeholder="Your company" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
+                <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-500">
+                  <option value="">Select a service</option>
+                  <option>Audit & Assurance</option>
+                  <option>Accounting & Finance</option>
+                  <option>Taxation</option>
+                  <option>Banking Operations</option>
+                  <option>Regulatory & Compliance</option>
+                  <option>Company Formation</option>
+                  <option>HR Consulting</option>
+                  <option>Not Sure - Need Guidance</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Tell us about your needs</label>
+                <textarea rows="4" placeholder="Briefly describe your requirements..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
+                Book Free Consultation
+              </button>
+              <p class="text-gray-400 text-xs text-center">By submitting, you agree to our <a href="/privacy" class="text-primary hover:underline">Privacy Policy</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

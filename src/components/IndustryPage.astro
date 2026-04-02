@@ -1,0 +1,96 @@
+---
+interface SubIndustry {
+  title: string
+  desc: string
+}
+
+interface Props {
+  title: string
+  description: string
+  subIndustries: SubIndustry[]
+  services: string[]
+  relatedIndustries: { label: string; href: string }[]
+}
+
+const { title, description, subIndustries, services, relatedIndustries } = Astro.props
+---
+
+<!-- Hero -->
+<section class="bg-primary py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-2 text-gray-400 text-sm mb-4">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <a href="/industries" class="hover:text-white transition-colors">Industries</a>
+      <span>/</span>
+      <span class="text-white">{title}</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">{title}</h1>
+    <p class="text-gray-300 text-lg max-w-3xl leading-relaxed">{description}</p>
+  </div>
+</section>
+
+<!-- Sub Industries -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-2">Sectors We Cover</p>
+      <h2 class="text-3xl font-bold text-primary">{title} Sub-Sectors</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {subIndustries.map((item) => (
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-primary mb-3">{item.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Services for this industry -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-2">How We Help</p>
+      <h2 class="text-3xl font-bold text-primary">Our Services for {title}</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {services.map((service) => (
+        <div class="flex items-start gap-4 bg-white rounded-xl p-6 border border-gray-100">
+          <svg class="w-5 h-5 text-secondary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-gray-700 font-medium">{service}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">Need Financial Solutions for {title}?</h2>
+    <p class="text-gray-300 text-lg mb-8">Our team has deep expertise in serving the {title.toLowerCase()} sector. Let's discuss your needs.</p>
+    <a href="/contact" class="inline-block px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
+      Get Free Consultation
+    </a>
+  </div>
+</section>
+
+<!-- Related Industries -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold text-primary">Explore Other Industries</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {relatedIndustries.map((ind) => (
+        <a href={ind.href} class="bg-gray-50 hover:bg-accent border border-gray-100 rounded-xl p-6 text-center transition-colors group">
+          <h3 class="font-semibold text-primary group-hover:text-secondary transition-colors text-sm">{ind.label}</h3>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

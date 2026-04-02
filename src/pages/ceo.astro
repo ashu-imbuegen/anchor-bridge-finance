@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Meet the CEO | Anchor Bridge Finance">
+  <!-- Hero -->
+  <section class="bg-primary py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-3">Leadership</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Meet the CEO</h1>
+    </div>
+  </section>
+
+  <!-- CEO Profile -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <!-- Photo -->
+        <div>
+          <div class="bg-gray-100 rounded-2xl aspect-[3/4] max-w-md mx-auto flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-5xl font-bold text-primary">JD</span>
+              </div>
+              <p class="text-gray-400 text-sm">CEO Photo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">John Doe</h2>
+          <p class="text-secondary font-medium text-lg mb-6">Founder & Chief Executive Officer</p>
+
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              With over 20 years of experience in financial consulting, audit, and business advisory, John Doe founded Anchor Bridge Finance with a clear vision — to bridge the gap between businesses and their financial aspirations.
+            </p>
+            <p>
+              A Chartered Accountant by qualification and a strategist by nature, John has worked with Fortune 500 companies, government entities, and high-growth startups across the Middle East, Asia, and Europe.
+            </p>
+            <p>
+              Under his leadership, Anchor Bridge Finance has grown from a small advisory firm to a comprehensive financial services provider, serving over 500 clients across 7+ industries.
+            </p>
+            <p>
+              John is passionate about leveraging technology to deliver efficient financial solutions and believes in building long-term partnerships with clients based on trust, transparency, and results.
+            </p>
+          </div>
+
+          <!-- Credentials -->
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { label: 'Chartered Accountant (CA)', icon: '🎓' },
+              { label: 'Certified Public Accountant (CPA)', icon: '📜' },
+              { label: 'Certified Fraud Examiner (CFE)', icon: '🔍' },
+              { label: 'MBA in Finance', icon: '🎯' },
+            ].map((cred) => (
+              <div class="flex items-center gap-3 bg-accent rounded-lg p-4">
+                <span class="text-xl">{cred.icon}</span>
+                <span class="text-sm font-medium text-primary">{cred.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Social -->
+          <div class="mt-8 flex gap-3">
+            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-light transition-colors" aria-label="LinkedIn">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-light transition-colors" aria-label="Twitter">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO Message -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl p-8 md:p-12 border border-gray-100">
+        <svg class="w-12 h-12 text-secondary/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+        </svg>
+        <p class="text-xl text-gray-700 leading-relaxed mb-6 italic">
+          "At Anchor Bridge Finance, we don't just provide financial services — we build bridges. Bridges between where your business is today and where it can be tomorrow. Our commitment is to walk alongside you on this journey, providing the expertise, insights, and support you need to achieve your goals."
+        </p>
+        <div>
+          <p class="font-semibold text-primary">John Doe</p>
+          <p class="text-sm text-gray-500">Founder & CEO, Anchor Bridge Finance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">Want to Connect with Our Team?</h2>
+      <p class="text-gray-300 text-lg mb-8">Schedule a meeting with our leadership team to discuss your business needs.</p>
+      <a href="/contact" class="inline-block px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
+        Schedule a Meeting
+      </a>
+    </div>
+  </section>
+</Layout>

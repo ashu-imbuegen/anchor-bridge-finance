@@ -1,0 +1,150 @@
+---
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  {
+    label: 'Services',
+    href: '/services',
+    children: [
+      { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+      { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+      { label: 'Taxation', href: '/services/taxation' },
+      { label: 'Banking Operations', href: '/services/banking-operations' },
+      { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+      { label: 'Company Formation', href: '/services/company-formation' },
+      { label: 'HR Consulting', href: '/services/hr-consulting' },
+    ],
+  },
+  {
+    label: 'Industries',
+    href: '/industries',
+    children: [
+      { label: 'Technology', href: '/industries/technology' },
+      { label: 'Healthcare', href: '/industries/healthcare' },
+      { label: 'Education', href: '/industries/education' },
+      { label: 'Startups', href: '/industries/startups' },
+      { label: 'Manufacturing', href: '/industries/manufacturing' },
+      { label: 'Financial Services', href: '/industries/financial-services' },
+      { label: 'Consumer', href: '/industries/consumer' },
+    ],
+  },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Meet the CEO', href: '/ceo' },
+  { label: 'Refer & Earn', href: '/refer-and-earn' },
+  { label: 'Contact', href: '/contact' },
+]
+
+const currentPath = Astro.url.pathname
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-xl">A</span>
+        </div>
+        <div>
+          <span class="text-xl font-bold text-primary">Anchor Bridge</span>
+          <span class="block text-xs text-secondary font-medium -mt-1">Finance</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {navItems.map((item) => (
+          <div class="relative group">
+            <a
+              href={item.href}
+              class:list={[
+                'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+                currentPath === item.href
+                  ? 'text-primary bg-accent'
+                  : 'text-gray-600 hover:text-primary hover:bg-gray-50',
+              ]}
+            >
+              {item.label}
+              {item.children && (
+                <svg class="inline-block w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              )}
+            </a>
+            {item.children && (
+              <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="bg-white border border-gray-100 rounded-xl shadow-lg py-2 min-w-[220px]">
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-4 py-2.5 text-sm text-gray-600 hover:text-primary hover:bg-accent transition-colors"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      <!-- CTA Button -->
+      <a
+        href="/contact"
+        class="hidden lg:inline-flex items-center px-6 py-2.5 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-light transition-colors"
+      >
+        Free Consultation
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 text-gray-600 hover:text-primary"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100">
+    <div class="px-4 py-4 space-y-1">
+      {navItems.map((item) => (
+        <>
+          <a
+            href={item.href}
+            class="block px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-primary hover:bg-accent rounded-md"
+          >
+            {item.label}
+          </a>
+          {item.children && item.children.map((child) => (
+            <a
+              href={child.href}
+              class="block pl-8 pr-4 py-2 text-sm text-gray-500 hover:text-primary hover:bg-accent rounded-md"
+            >
+              {child.label}
+            </a>
+          ))}
+        </>
+      ))}
+      <a
+        href="/contact"
+        class="block px-4 py-2.5 text-sm font-semibold text-white bg-secondary rounded-lg text-center mt-4"
+      >
+        Free Consultation
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn')
+  const menu = document.getElementById('mobile-menu')
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden')
+  })
+</script>

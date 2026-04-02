@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Startups', href: '/industries/startups' },
+  { label: 'Financial Services', href: '/industries/financial-services' },
+  { label: 'Manufacturing', href: '/industries/manufacturing' },
+  { label: 'Consumer', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Education Industry | Anchor Bridge Finance">
+  <IndustryPage
+    title="Education"
+    description="Financial management and consulting services for educational institutions, from K-12 schools to universities and edtech platforms."
+    subIndustries={[
+      { title: 'K-12 Schools', desc: 'Accounting, budgeting, and compliance services for private and international schools.' },
+      { title: 'Higher Education', desc: 'Financial reporting, audit, and grant management for universities and colleges.' },
+      { title: 'Online Education Platforms', desc: 'Revenue recognition, VAT compliance, and financial structuring for e-learning businesses.' },
+      { title: 'Vocational Training', desc: 'Financial management and compliance for vocational and professional training institutes.' },
+      { title: 'EdTech', desc: 'Startup advisory, funding support, and financial management for education technology companies.' },
+      { title: 'Tutoring', desc: 'Tax planning, payroll management, and accounting for tutoring centers and private education services.' },
+    ]}
+    services={[
+      'Educational Institution Audits',
+      'Budget Planning & Management',
+      'Grant & Fund Accounting',
+      'Tax Compliance for Education Sector',
+      'Payroll for Teaching & Admin Staff',
+      'Financial Reporting & Compliance',
+      'Fee Management Advisory',
+      'Business Setup for Education Ventures',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

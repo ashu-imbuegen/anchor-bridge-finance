@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Startups', href: '/industries/startups' },
+  { label: 'Education', href: '/industries/education' },
+  { label: 'Financial Services', href: '/industries/financial-services' },
+  { label: 'Manufacturing', href: '/industries/manufacturing' },
+  { label: 'Consumer', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Healthcare Industry | Anchor Bridge Finance">
+  <IndustryPage
+    title="Healthcare"
+    description="Comprehensive financial services for the healthcare sector, ensuring compliance with industry regulations while optimizing financial performance."
+    subIndustries={[
+      { title: 'Hospitals & Clinics', desc: 'Financial management, audit, and compliance services for healthcare facilities and medical centers.' },
+      { title: 'Pharmaceuticals', desc: 'Tax planning, transfer pricing, and regulatory compliance for pharmaceutical companies.' },
+      { title: 'Biotechnology', desc: 'Financial structuring, R&D accounting, and investment advisory for biotech firms.' },
+      { title: 'Medical Devices', desc: 'Inventory management, customs compliance, and financial reporting for medical device companies.' },
+      { title: 'Health Insurance', desc: 'Actuarial support, regulatory compliance, and financial advisory for health insurance providers.' },
+      { title: 'Telehealth Services', desc: 'Revenue recognition, VAT compliance, and financial management for digital health platforms.' },
+    ]}
+    services={[
+      'Healthcare Regulatory Compliance',
+      'Medical Facility Audit Services',
+      'Pharmaceutical Tax Advisory',
+      'Insurance & Claims Management',
+      'Payroll for Healthcare Staff',
+      'Financial Reporting (IFRS/Healthcare)',
+      'Inventory & Asset Management',
+      'Business Valuation for Healthcare',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

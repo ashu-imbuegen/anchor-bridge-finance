@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Taxation', href: '/services/taxation' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+  { label: 'HR Consulting', href: '/services/hr-consulting' },
+]
+---
+
+<Layout title="Regulatory & Compliance | Anchor Bridge Finance">
+  <ServicePage
+    title="Regulatory & Compliance"
+    icon="⚖️"
+    description="Ensure your business meets all regulatory requirements with our comprehensive compliance solutions, from AML to full outsourced compliance officer services."
+    subServices={[
+      { title: 'AML Compliance', desc: 'Anti-Money Laundering compliance services including policy development, risk assessments, transaction monitoring, and suspicious activity reporting to meet applicable AML/CFT regulations.' },
+      { title: 'Outsourced Compliance Officer', desc: 'Dedicated compliance officer services for businesses that need expert regulatory oversight without the cost of a full-time hire. Includes regulatory liaison, compliance monitoring, and reporting.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

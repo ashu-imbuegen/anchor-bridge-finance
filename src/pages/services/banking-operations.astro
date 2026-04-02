@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Taxation', href: '/services/taxation' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+  { label: 'HR Consulting', href: '/services/hr-consulting' },
+]
+---
+
+<Layout title="Banking Operations Excellence | Anchor Bridge Finance">
+  <ServicePage
+    title="Banking Operations"
+    icon="🏦"
+    description="Specialized consulting services for banking institutions to optimize operations, enhance customer experience, and ensure regulatory compliance."
+    subServices={[
+      { title: 'Retail Banking', desc: 'Advisory on retail banking operations including branch management, product development, process optimization, and customer experience enhancement.' },
+      { title: 'Corporate & SME Banking', desc: 'Consulting for corporate and SME banking divisions covering credit processes, relationship management, and product structuring.' },
+      { title: 'Risk and Compliance', desc: 'Risk assessment, compliance framework development, and regulatory advisory for banking institutions.' },
+      { title: 'Digital Banking', desc: 'Digital transformation consulting including fintech integration, mobile banking solutions, and digital payment systems.' },
+      { title: 'Customer Services & Relationship Management', desc: 'Strategies for improving customer satisfaction, retention, and relationship management in banking operations.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const industries = [
+  { title: 'Technology', desc: 'Financial solutions for software companies, IT services, cybersecurity firms, and AI/ML startups.', href: '/industries/technology' },
+  { title: 'Healthcare', desc: 'Accounting and compliance services for hospitals, pharma, biotech, and medical device companies.', href: '/industries/healthcare' },
+  { title: 'Education', desc: 'Financial management for schools, universities, edtech platforms, and training institutions.', href: '/industries/education' },
+  { title: 'Startups', desc: 'Tailored financial services for tech startups, fintech, healthtech, and social enterprises.', href: '/industries/startups' },
+  { title: 'Manufacturing', desc: 'Audit, tax, and accounting for food & beverage, automotive, electronics, and textile manufacturers.', href: '/industries/manufacturing' },
+  { title: 'Financial Services', desc: 'Specialized consulting for banks, investment firms, insurance companies, and real estate finance.', href: '/industries/financial-services' },
+  { title: 'Consumer', desc: 'Financial expertise for retail, e-commerce, FMCG, personal care, and home goods businesses.', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Industries We Serve | Anchor Bridge Finance">
+  <section class="bg-primary py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-3">Industries</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Industries We Serve</h1>
+      <p class="text-gray-300 text-lg max-w-3xl leading-relaxed">
+        Deep expertise across diverse sectors, delivering industry-specific financial solutions that drive growth and ensure compliance.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {industries.map((industry) => (
+          <a href={industry.href} class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition-all group">
+            <h3 class="text-xl font-semibold text-primary mb-3 group-hover:text-secondary transition-colors">{industry.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">{industry.desc}</p>
+            <span class="text-secondary text-sm font-medium group-hover:underline">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">Don't See Your Industry?</h2>
+      <p class="text-gray-300 text-lg mb-8">We serve businesses across all sectors. Reach out and we'll tailor a solution for you.</p>
+      <a href="/contact" class="inline-block px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Taxation', href: '/services/taxation' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'HR Consulting', href: '/services/hr-consulting' },
+]
+---
+
+<Layout title="Audit & Assurance | Anchor Bridge Finance">
+  <ServicePage
+    title="Audit & Assurance"
+    icon="🔍"
+    description="Our audit and assurance services provide independent, objective assessments to help organizations improve their operations, manage risk, and ensure regulatory compliance."
+    subServices={[
+      { title: 'External Audit', desc: 'Independent examination of financial statements to provide assurance on their accuracy and compliance with applicable standards and regulations.' },
+      { title: 'Internal Audit', desc: 'Systematic evaluation of internal controls, risk management, and governance processes to improve organizational efficiency and effectiveness.' },
+      { title: 'Forensic Audit', desc: 'Specialized investigative audits to detect fraud, financial irregularities, and misconduct within organizations.' },
+      { title: 'In Country Value (ICV) Program', desc: 'ICV certification and compliance services to help businesses meet in-country value requirements and participate in government contracts.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'HR Consulting', href: '/services/hr-consulting' },
+]
+---
+
+<Layout title="Taxation | Anchor Bridge Finance">
+  <ServicePage
+    title="Taxation"
+    icon="📋"
+    description="Expert tax advisory and compliance services to help you navigate the evolving tax landscape, minimize liabilities, and ensure full compliance."
+    subServices={[
+      { title: 'Corporate Tax', desc: 'Comprehensive corporate tax planning, compliance, and advisory services in line with local corporate tax regulations and international standards.' },
+      { title: 'International Taxation', desc: 'Cross-border tax planning, double tax treaty analysis, and international tax structuring for multinational businesses.' },
+      { title: 'Transfer Pricing', desc: 'Transfer pricing documentation, benchmarking studies, and compliance with arm\'s length principles for intercompany transactions.' },
+      { title: 'VAT', desc: 'VAT registration, return filing, compliance, and advisory services to ensure adherence to applicable VAT regulations.' },
+      { title: 'Customs', desc: 'Customs duty planning, classification, and compliance support for import and export businesses.' },
+      { title: 'Excise Tax', desc: 'Excise tax registration, compliance, and advisory for businesses dealing in excisable goods.' },
+      { title: 'Tax Residency Certificate', desc: 'Assistance in obtaining tax residency certificates for individuals and entities to benefit from double tax treaties.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

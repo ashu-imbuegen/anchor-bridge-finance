@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Taxation', href: '/services/taxation' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'HR Consulting', href: '/services/hr-consulting' },
+]
+---
+
+<Layout title="Accounting & Finance | Anchor Bridge Finance">
+  <ServicePage
+    title="Accounting & Finance"
+    icon="📊"
+    description="End-to-end accounting and financial management solutions to keep your books accurate, your reports timely, and your business compliant."
+    subServices={[
+      { title: 'Accounting', desc: 'Comprehensive bookkeeping and accounting services including accounts payable, receivable, general ledger management, and bank reconciliation.' },
+      { title: 'Financial Reporting', desc: 'Preparation of financial statements in accordance with IFRS and local standards, including balance sheets, income statements, and cash flow reports.' },
+      { title: 'Management Reports', desc: 'Customized management information systems (MIS) reports to support data-driven business decision making.' },
+      { title: 'Finance Officer Services', desc: 'Dedicated finance officer services for entities in regulated zones, ensuring compliance with all regulatory requirements.' },
+      { title: 'Payroll Management', desc: 'Complete payroll processing including salary calculations, statutory compliance, benefits administration, and leave management.' },
+      { title: 'Fixed Asset Management', desc: 'Tracking, depreciation, and management of fixed assets to maintain accurate financial records and optimize asset utilization.' },
+      { title: 'Inventory Verification', desc: 'Physical inventory counts and reconciliation services to ensure accurate stock records and minimize losses.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

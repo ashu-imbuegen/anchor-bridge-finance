@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Taxation', href: '/services/taxation' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+]
+---
+
+<Layout title="HR Consulting & Advisory | Anchor Bridge Finance">
+  <ServicePage
+    title="HR Consulting"
+    icon="👥"
+    description="Strategic human resource consulting to help you attract, retain, and develop top talent. From recruitment to process outsourcing, we've got your HR needs covered."
+    subServices={[
+      { title: 'Talent Acquisition', desc: 'End-to-end recruitment services including candidate sourcing, screening, interviewing, and onboarding support across all industries and levels.' },
+      { title: 'RPO (Recruitment Process Outsourcing)', desc: 'Full or partial outsourcing of your recruitment function, providing scalable hiring solutions with dedicated recruitment teams and technology.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

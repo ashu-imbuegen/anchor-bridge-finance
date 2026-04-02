@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Education', href: '/industries/education' },
+  { label: 'Financial Services', href: '/industries/financial-services' },
+  { label: 'Manufacturing', href: '/industries/manufacturing' },
+  { label: 'Consumer', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Startups | Anchor Bridge Finance">
+  <IndustryPage
+    title="Startups"
+    description="From idea to IPO, we provide the financial foundation startups need to scale confidently. Tailored services that grow with your business."
+    subIndustries={[
+      { title: 'Tech Startups', desc: 'Financial structuring, fundraising support, and compliance for technology-driven startups.' },
+      { title: 'Health Tech', desc: 'Specialized accounting and regulatory compliance for healthtech ventures.' },
+      { title: 'FinTech', desc: 'Financial management, regulatory advisory, and compliance for financial technology companies.' },
+      { title: 'Social Enterprises', desc: 'Impact measurement, grant accounting, and financial management for social impact organizations.' },
+      { title: 'Creative & Media Startups', desc: 'Revenue recognition, IP valuation, and financial planning for creative industry startups.' },
+    ]}
+    services={[
+      'Company Formation & Business Setup',
+      'Fundraising & Investor Reporting',
+      'Financial Modeling & Projections',
+      'Tax Planning for Startups',
+      'Bookkeeping & Accounting',
+      'Payroll Setup & Management',
+      'Compliance & Regulatory Advisory',
+      'Business Valuation',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

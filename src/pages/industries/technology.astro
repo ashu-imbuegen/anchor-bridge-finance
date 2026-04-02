@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Startups', href: '/industries/startups' },
+  { label: 'Financial Services', href: '/industries/financial-services' },
+  { label: 'Education', href: '/industries/education' },
+  { label: 'Manufacturing', href: '/industries/manufacturing' },
+  { label: 'Consumer', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Technology Industry | Anchor Bridge Finance">
+  <IndustryPage
+    title="Technology"
+    description="Specialized financial services for technology companies, from software startups to established IT enterprises. We understand the unique challenges and opportunities in the tech sector."
+    subIndustries={[
+      { title: 'Software Development', desc: 'Financial management for software companies including revenue recognition, R&D tax credits, and IP valuation.' },
+      { title: 'IT Services & Consulting', desc: 'Accounting and tax solutions for IT service providers and consulting firms.' },
+      { title: 'Cybersecurity', desc: 'Financial compliance and advisory for cybersecurity companies operating in regulated environments.' },
+      { title: 'Telecommunications', desc: 'Complex financial reporting and regulatory compliance for telecom operators and service providers.' },
+      { title: 'AI & Machine Learning', desc: 'Financial structuring and investment advisory for AI/ML companies and research organizations.' },
+    ]}
+    services={[
+      'Corporate Tax Planning & Compliance',
+      'R&D Tax Incentives Advisory',
+      'Revenue Recognition (SaaS/Subscription)',
+      'Financial Reporting & IFRS Compliance',
+      'IP Valuation & Transfer Pricing',
+      'Startup Funding & Investment Advisory',
+      'Payroll Management for Tech Teams',
+      'VAT Compliance for Digital Services',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

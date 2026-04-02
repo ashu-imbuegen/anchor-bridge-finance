@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Education', href: '/industries/education' },
+  { label: 'Startups', href: '/industries/startups' },
+  { label: 'Manufacturing', href: '/industries/manufacturing' },
+  { label: 'Consumer', href: '/industries/consumer' },
+]
+---
+
+<Layout title="Financial Services Industry | Anchor Bridge Finance">
+  <IndustryPage
+    title="Financial Services"
+    description="Expert consulting for financial institutions, from regulatory compliance to operational excellence. Deep understanding of banking, insurance, and investment sectors."
+    subIndustries={[
+      { title: 'Banking', desc: 'Audit, compliance, and operational consulting for retail and corporate banking institutions.' },
+      { title: 'Investment Management', desc: 'Financial reporting, fund administration, and regulatory compliance for investment firms and asset managers.' },
+      { title: 'Insurance', desc: 'Actuarial support, regulatory compliance, and financial management for insurance companies.' },
+      { title: 'Real Estate Finance', desc: 'Property valuation, financial structuring, and tax planning for real estate investment and development companies.' },
+    ]}
+    services={[
+      'Regulatory & AML Compliance',
+      'External & Internal Audit',
+      'Risk Management Advisory',
+      'Financial Reporting (IFRS 9/17)',
+      'Tax Planning for Financial Institutions',
+      'Outsourced Compliance Officer',
+      'Digital Transformation Advisory',
+      'Business Valuation & Due Diligence',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

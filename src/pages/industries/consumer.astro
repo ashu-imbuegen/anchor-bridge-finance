@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import IndustryPage from '../../components/IndustryPage.astro'
+
+const relatedIndustries = [
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Education', href: '/industries/education' },
+  { label: 'Startups', href: '/industries/startups' },
+  { label: 'Manufacturing', href: '/industries/manufacturing' },
+  { label: 'Financial Services', href: '/industries/financial-services' },
+]
+---
+
+<Layout title="Consumer Industry | Anchor Bridge Finance">
+  <IndustryPage
+    title="Consumer"
+    description="Financial solutions for consumer-facing businesses, from retail chains to e-commerce platforms. We help you manage finances while you focus on your customers."
+    subIndustries={[
+      { title: 'Retail', desc: 'Point-of-sale accounting, inventory management, and multi-location financial reporting for retail businesses.' },
+      { title: 'Consumer Goods (FMCG)', desc: 'Cost accounting, supply chain financial management, and tax compliance for FMCG companies.' },
+      { title: 'E-commerce & Online Retail', desc: 'Revenue recognition, VAT on digital sales, and financial management for online retailers and marketplaces.' },
+      { title: 'Food & Beverage', desc: 'Restaurant accounting, franchise financial management, and excise tax compliance for F&B businesses.' },
+      { title: 'Personal Care & Cosmetics', desc: 'Product costing, customs compliance, and financial reporting for beauty and personal care brands.' },
+      { title: 'Home Goods & Furnishings', desc: 'Inventory valuation, import duty optimization, and financial management for home goods retailers.' },
+    ]}
+    services={[
+      'Retail Accounting & POS Integration',
+      'Inventory Management & Valuation',
+      'E-commerce VAT Compliance',
+      'Multi-location Financial Reporting',
+      'Customs & Import Duty Advisory',
+      'Franchise Financial Management',
+      'Payroll for Retail Staff',
+      'Business Expansion Advisory',
+    ]}
+    relatedIndustries={relatedIndustries}
+  />
+</Layout>

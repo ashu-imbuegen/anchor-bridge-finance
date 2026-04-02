@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Refer & Earn | Anchor Bridge Finance">
+  <!-- Hero -->
+  <section class="bg-primary py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-3">Referral Program</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Refer & Earn</h1>
+      <p class="text-gray-300 text-lg max-w-3xl leading-relaxed">
+        Know a business that needs financial services? Refer them to us and earn attractive rewards for every successful referral.
+      </p>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-2">Simple Process</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-primary">How It Works</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {[
+          { step: '1', title: 'Refer a Business', desc: 'Share the details of a business that could benefit from our services using the form below.' },
+          { step: '2', title: 'We Connect', desc: 'Our team reaches out to the referred business and provides them with a tailored proposal.' },
+          { step: '3', title: 'You Earn', desc: 'Once the referral becomes a client, you receive your reward. Simple as that!' },
+        ].map((item) => (
+          <div class="text-center">
+            <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-white font-bold text-2xl">{item.step}</span>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">{item.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-2">Why Refer?</p>
+          <h2 class="text-3xl font-bold text-primary mb-6">Benefits of Our Referral Program</h2>
+          <ul class="space-y-4">
+            {[
+              'Attractive cash rewards for every successful referral',
+              'No limit on the number of referrals you can make',
+              'Help your network access quality financial services',
+              'Track your referrals and rewards easily',
+              'Dedicated support throughout the process',
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-600">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-primary rounded-2xl p-10 text-center">
+          <p class="text-secondary font-medium text-sm uppercase tracking-wider mb-2">Earn Up To</p>
+          <p class="text-5xl font-bold text-white mb-2">$5,000</p>
+          <p class="text-gray-300 mb-4">Per Successful Referral</p>
+          <p class="text-gray-400 text-sm">Terms & conditions apply</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referral Form -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-primary mb-4">Submit a Referral</h2>
+        <p class="text-gray-500">Fill in the details below and we'll take it from there.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 md:p-10">
+        <form class="space-y-6">
+          <h3 class="text-lg font-semibold text-primary">Your Details</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+              <input type="text" placeholder="Your full name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+              <input type="email" placeholder="your@email.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+            </div>
+          </div>
+
+          <h3 class="text-lg font-semibold text-primary pt-4">Referral Details</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Business Name</label>
+              <input type="text" placeholder="Company name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Contact Person</label>
+              <input type="text" placeholder="Contact person name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <input type="email" placeholder="referral@company.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+              <input type="tel" placeholder="+XX XXX XXX XXXX" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
+            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-500">
+              <option value="">Select a service</option>
+              <option>Audit & Assurance</option>
+              <option>Accounting & Finance</option>
+              <option>Taxation</option>
+              <option>Banking Operations</option>
+              <option>Regulatory & Compliance</option>
+              <option>Company Formation</option>
+              <option>HR Consulting</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+            <textarea rows="4" placeholder="Any additional information..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
+            Submit Referral
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Taxation', href: '/services/taxation' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'HR Consulting', href: '/services/hr-consulting' },
+]
+---
+
+<Layout title="Company Formation & Business Consultancy | Anchor Bridge Finance">
+  <ServicePage
+    title="Company Formation"
+    icon="🏢"
+    description="End-to-end business setup services, from company incorporation to special zone registration, with expert guidance at every step."
+    subServices={[
+      { title: 'Mainland Company Incorporation', desc: 'Complete assistance with mainland company formation including trade license, legal documentation, visa processing, and office setup.' },
+      { title: 'Special Zone Business Setup', desc: 'Registration and setup services across major special economic zones with guidance on the best zone for your business type.' },
+      { title: 'Liquidation', desc: 'Professional company liquidation and deregistration services ensuring compliance with all legal and regulatory requirements.' },
+      { title: 'Business Valuation', desc: 'Independent business valuation services for mergers, acquisitions, investment decisions, and financial reporting purposes.' },
+      { title: 'Feasibility Studies & Project Reports', desc: 'Comprehensive feasibility analysis and project reports to support business planning, funding applications, and investment decisions.' },
+      { title: 'Due Diligence', desc: 'Thorough due diligence investigations covering financial, legal, and operational aspects for informed business decisions.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>
