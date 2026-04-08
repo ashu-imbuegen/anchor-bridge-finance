@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+  { label: 'IT Services & Consulting', href: '/services/it-services' },
+]
+---
+
+<Layout title="AML Compliance Solutions | Finlence">
+  <ServicePage
+    title="AML Compliance"
+    icon="🛡️"
+    description="Comprehensive Anti-Money Laundering solutions to ensure your business is fully compliant with UAE regulations. We help you build robust AML frameworks, conduct risk assessments, and stay ahead of regulatory requirements."
+    subServices={[
+      { title: 'AML Policy & Framework Development', desc: 'Design and implement tailored AML policies, procedures, and internal controls aligned with UAE Central Bank guidelines, FATF recommendations, and local regulatory requirements.' },
+      { title: 'Risk Assessment & Due Diligence', desc: 'Conduct enterprise-wide money laundering and terrorist financing risk assessments. Customer due diligence (CDD), enhanced due diligence (EDD), and ongoing monitoring frameworks.' },
+      { title: 'Suspicious Transaction Reporting', desc: 'Establish robust systems for identifying, investigating, and reporting suspicious transactions to the UAE Financial Intelligence Unit (FIU) in compliance with Federal Decree-Law No. 20 of 2018.' },
+      { title: 'AML Training & Awareness', desc: 'Customised AML training programmes for your staff at all levels, covering red flags identification, reporting obligations, and regulatory updates to build a strong compliance culture.' },
+      { title: 'Compliance Audit & Health Check', desc: 'Independent review of your existing AML controls, policies, and procedures. Identify gaps, recommend improvements, and prepare your organisation for regulatory inspections.' },
+      { title: 'Outsourced Compliance Officer', desc: 'Dedicated AML compliance officer services for businesses that need expert oversight without the cost of a full-time hire. Regular reporting, regulatory liaison, and ongoing compliance management.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ServicePage from '../../components/ServicePage.astro'
+
+const relatedServices = [
+  { label: 'Accounting & Finance', href: '/services/accounting-finance' },
+  { label: 'AML Compliance', href: '/services/aml-compliance' },
+  { label: 'Banking Operations', href: '/services/banking-operations' },
+  { label: 'Audit & Assurance', href: '/services/audit-assurance' },
+  { label: 'Regulatory & Compliance', href: '/services/regulatory-compliance' },
+  { label: 'Company Formation', href: '/services/company-formation' },
+]
+---
+
+<Layout title="IT Services & Consulting | Finlence">
+  <ServicePage
+    title="IT Services & Consulting"
+    icon="💻"
+    description="Technology-driven solutions to modernise your business operations. From ERP implementation to cloud migration and cybersecurity, we help you leverage technology for efficiency and growth."
+    subServices={[
+      { title: 'ERP & Accounting Software Implementation', desc: 'Expert setup and customisation of leading accounting platforms including Tally, QuickBooks, Zoho Books, SAP, NetSuite, and Microsoft Dynamics. Data migration, training, and ongoing support included.' },
+      { title: 'Cloud Solutions & Migration', desc: 'Seamless migration of your business applications and data to cloud platforms. We assess your infrastructure, plan the migration, and ensure zero downtime with secure, scalable cloud architecture.' },
+      { title: 'Cybersecurity & Data Protection', desc: 'Comprehensive security assessments, vulnerability testing, and data protection strategies aligned with UAE data privacy regulations. Firewall management, endpoint security, and incident response planning.' },
+      { title: 'Business Process Automation', desc: 'Identify manual, repetitive workflows and implement automation solutions using RPA, workflow tools, and custom integrations to reduce errors, save time, and improve operational efficiency.' },
+      { title: 'IT Infrastructure & Support', desc: 'End-to-end IT infrastructure management including network setup, server management, help desk support, and hardware procurement. Proactive monitoring to minimise downtime.' },
+      { title: 'Digital Transformation Advisory', desc: 'Strategic consulting to help your business adopt digital technologies. From digital roadmaps to change management, we guide your organisation through every stage of transformation.' },
+    ]}
+    relatedServices={relatedServices}
+  />
+</Layout>
