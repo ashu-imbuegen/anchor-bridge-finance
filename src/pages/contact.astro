@@ -81,30 +81,36 @@ import Layout from '../layouts/Layout.astro'
         <div class="lg:col-span-2">
           <div class="bg-gray-50 rounded-2xl p-8 md:p-10">
             <h3 class="text-2xl font-bold text-primary mb-6">Send us a Message</h3>
-            <form class="space-y-6">
+            <div id="form-success" class="hidden bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+              <p class="text-green-700 font-medium">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+            </div>
+            <div id="form-error" class="hidden bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+              <p class="text-red-700 font-medium" id="error-text">Something went wrong. Please try again.</p>
+            </div>
+            <form id="contact-form" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                  <input type="text" placeholder="John" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+                  <label class="block text-sm font-medium text-gray-700 mb-2">First Name <span class="text-red-500">*</span></label>
+                  <input type="text" name="firstName" required placeholder="John" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
                 </div>
                 <div>
                   <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                  <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+                  <input type="text" name="lastName" placeholder="Doe" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
                 </div>
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Email <span class="text-red-500">*</span></label>
+                  <input type="email" name="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
                 </div>
                 <div>
                   <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                  <input type="tel" placeholder="+XX XXX XXX XXXX" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
+                  <input type="tel" name="phone" placeholder="+XX XXX XXX XXXX" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" />
                 </div>
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
-                <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-500">
+                <select name="service" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-500">
                   <option value="">Select a service</option>
                   <option>Audit & Assurance</option>
                   <option>Accounting & Finance</option>
@@ -117,10 +123,10 @@ import Layout from '../layouts/Layout.astro'
                 </select>
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea rows="5" placeholder="Tell us about your requirements..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"></textarea>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Message <span class="text-red-500">*</span></label>
+                <textarea rows="5" name="message" required placeholder="Tell us about your requirements..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"></textarea>
               </div>
-              <button type="submit" class="w-full md:w-auto px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
+              <button type="submit" id="submit-btn" class="w-full md:w-auto px-8 py-3.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-light transition-colors">
                 Send Message
               </button>
             </form>
@@ -129,6 +135,51 @@ import Layout from '../layouts/Layout.astro'
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const successDiv = document.getElementById('form-success') as HTMLDivElement;
+    const errorDiv = document.getElementById('form-error') as HTMLDivElement;
+    const errorText = document.getElementById('error-text') as HTMLParagraphElement;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successDiv.classList.add('hidden');
+      errorDiv.classList.add('hidden');
+
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          successDiv.classList.remove('hidden');
+          form.reset();
+        } else {
+          errorText.textContent = result.error || 'Something went wrong. Please try again.';
+          errorDiv.classList.remove('hidden');
+        }
+      } catch {
+        errorText.textContent = 'Network error. Please check your connection and try again.';
+        errorDiv.classList.remove('hidden');
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 
   <!-- Map Placeholder -->
   <section class="bg-gray-100">

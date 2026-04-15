@@ -12,9 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^7.0.6",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.2",
     "h3": "^2.0.1-rc.20",
+    "nodemailer": "^8.0.5",
     "tailwindcss": "^4.2.2"
   }
 }
